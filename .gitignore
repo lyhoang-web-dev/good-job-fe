@@ -1,0 +1,41 @@
+node_modules
+.DS_Store
+dist
+build
+dist-ssr
+*.local
+.env
+.env.local
+.env.*.local
+CLAUDE.md
+AGENTS.md
+SPEC.md
+CONTRIBUTING.md
+.claude
+.cursor
+.codex
+
+# Internal / local IDE & agent tooling (not for the remote repo)
+mcp_config.json
+opencode.jsonc
+.vscode/mcp.json
+package-lock.json
+
+yarn-error.log*
+.pnpm-debug.log*
+
+# TS
+*.tsbuildinfo
+
+# Turbo
+.turbo
+
+stats.*
+
+# Test
+coverage/
+
+# ESLint
+.eslintcache
+
+.tanstack
