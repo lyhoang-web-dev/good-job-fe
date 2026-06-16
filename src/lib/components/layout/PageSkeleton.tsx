@@ -11,7 +11,7 @@ import {
 
 import { KudoCardSkeleton } from '@/lib/components/kudos/card/KudoCardSkeleton';
 
-/** Khi TanStack Router đang lazy-load chunk route. */
+/** Shown while TanStack Router is lazy-loading a route chunk. */
 export function RoutePendingSkeleton() {
   return (
     <VStack align="stretch" gap={6} maxWidth="720px" paddingY={2} width="full">
