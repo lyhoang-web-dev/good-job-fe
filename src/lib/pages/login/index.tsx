@@ -137,6 +137,8 @@ export default function LoginPage() {
               <Input
                 autoComplete="email"
                 borderRadius="xl"
+                id="login-email"
+                name="email"
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@company.com"
                 size="lg"
@@ -154,6 +156,8 @@ export default function LoginPage() {
                 <Input
                   autoComplete="current-password"
                   borderRadius="xl"
+                  id="login-password"
+                  name="password"
                   onChange={(e) => setPassword(e.target.value)}
                   paddingEnd="12"
                   placeholder="••••••••"
