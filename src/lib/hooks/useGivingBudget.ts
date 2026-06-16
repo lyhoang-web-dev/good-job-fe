@@ -2,12 +2,15 @@ import { useQuery } from '@tanstack/react-query';
 
 import { queryKeys } from '@/lib/services/queryKeys';
 import { usersService } from '@/lib/services/users';
+import { getSessionAccessToken } from '@/lib/services/sessionAccessToken';
 
 export function useGivingBudget() {
   const { data, isLoading } = useQuery({
     queryKey: queryKeys.users.givingBudget(),
     queryFn: usersService.getGivingBudget,
     staleTime: 60_000,
+    // Skip the protected call until the user has a session token.
+    enabled: Boolean(getSessionAccessToken()),
   });
 
   const total = data?.totalBudget ?? 0;
