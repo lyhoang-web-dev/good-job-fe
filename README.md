@@ -2,6 +2,12 @@
 
 React web app (Vite, TypeScript, Chakra UI v3, TanStack Router & Query) for an internal recognition and rewards program.
 
+## Architecture
+
+This SPA is the frontend of a full-stack system. It talks to the **Good Job API** (Express + Prisma) via `VITE_API_URL`, authenticating with JWT Bearer tokens and Google OAuth, and receives live updates over SSE.
+
+The full system diagram (Vercel · Render · Neon · Upstash · Google OAuth + the media/upload worker) lives in the **backend repo's `README.md`** under `## Architecture`.
+
 ## Environment requirements
 
 - **Node.js** `^24.11.x` (use the exact version declared in `package.json` → `engines` to avoid warnings when installing packages)
