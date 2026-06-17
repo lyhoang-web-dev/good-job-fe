@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/vitest';
 
-import { afterAll, afterEach, beforeAll, vi } from 'vite-plus/test';
+import { afterAll, afterEach, beforeAll, beforeEach, vi } from 'vite-plus/test';
 
 import { server } from './mocks/server';
 
@@ -34,8 +34,14 @@ Object.defineProperty(window, 'matchMedia', {
 beforeAll(() => {
   server.listen({ onUnhandledRequest: 'warn' });
 });
+// Tests simulate an authenticated session; token-gated queries (useMe, etc.)
+// need a token present, matching the app's real logged-in state.
+beforeEach(() => {
+  sessionStorage.setItem('goodjob:accessToken', 'test-access-token');
+});
 afterEach(() => {
   server.resetHandlers();
+  sessionStorage.clear();
 });
 afterAll(() => {
   server.close();
